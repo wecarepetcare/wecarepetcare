@@ -12,3 +12,19 @@ footer{text-align:center;background:var(--dark);color:#fff;padding:46px 20px}.fo
 dialog{width:min(460px,calc(100% - 40px));border:0;border-radius:18px;padding:34px;text-align:center;box-shadow:0 25px 80px #0006}dialog::backdrop{background:#261911a8}#close{position:absolute;right:14px;top:7px;border:0;background:none;font-size:32px}.paw{font-size:44px}
 @media(max-width:850px){#menu{display:block}nav{display:none;position:absolute;top:76px;left:0;right:0;flex-direction:column;align-items:stretch;padding:20px;background:var(--cream)}nav.open{display:flex}.grid{grid-template-columns:repeat(2,1fr)}.about{grid-template-columns:1fr}.hero{background-position:62% center}.shade{background:linear-gradient(90deg,#fff8f1fa,#fff8f1ba 60%,#fff8f126)}}
 @media(max-width:560px){.hero{min-height:600px;align-items:flex-end}.shade{background:linear-gradient(0deg,#fff8f1 0%,#fff8f1dd 48%,#fff8f11f 78%)}.hero-copy{margin:0 22px 42px;width:auto}.section{padding:58px 16px}form{grid-template-columns:1fr;padding:20px}.full{grid-column:auto}}
+.service-area{font-weight:800;color:var(--dark);margin:16px 0 4px}
+.supervision-note{font-size:14px!important;color:#6f5a4d;margin:0 0 6px}
+.supervision-contact{font-weight:800;color:var(--dark);margin-top:-18px}
+.text-contact{display:grid;grid-template-columns:auto 1fr;column-gap:12px;align-items:center;width:min(420px,100%);margin:20px auto 0;padding:16px 20px;border-radius:16px;background:var(--brown);color:white;text-align:left;box-shadow:0 10px 24px rgba(83,54,35,.16)}
+.text-contact>span{grid-row:1/3;font-size:32px}
+.text-contact strong{font-size:20px}
+.text-contact small{opacity:.9}
+.or-divider{display:flex;align-items:center;gap:14px;margin:28px auto 0;color:#866f60;font-size:13px;text-transform:uppercase;letter-spacing:.08em}
+.or-divider:before,.or-divider:after{content:"";height:1px;background:var(--line);flex:1}
+.footer-text-link{display:inline-flex;padding:11px 18px;border-radius:999px;background:white;color:var(--dark);font-weight:800}
+.floating-text{position:fixed;right:20px;bottom:20px;z-index:30;display:flex;align-items:center;gap:8px;padding:13px 18px;border-radius:999px;background:var(--brown);color:white;font-weight:800;box-shadow:0 10px 28px rgba(64,38,22,.25)}
+.floating-text:hover{background:var(--dark)}
+@media(max-width:560px){
+  .floating-text{right:14px;bottom:14px}
+  .floating-text span{display:inline}
+}
