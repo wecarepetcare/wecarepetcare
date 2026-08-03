@@ -1,3 +1,59 @@
-const menu=document.getElementById('menu'),nav=document.getElementById('nav');menu.onclick=()=>nav.classList.toggle('open');nav.querySelectorAll('a').forEach(a=>a.onclick=()=>nav.classList.remove('open'));
-const modal=document.getElementById('modal');document.querySelectorAll('.card').forEach(c=>c.onclick=()=>{document.getElementById('mt').textContent=c.dataset.name;document.getElementById('mc').textContent=c.dataset.copy;modal.showModal()});document.getElementById('close').onclick=()=>modal.close();document.getElementById('ask').onclick=()=>modal.close();
-document.getElementById('form').onsubmit=e=>{e.preventDefault();const d=new FormData(e.target),recipient='kempjaredm@gmail.com',subject=encodeURIComponent('Pet care request from '+d.get('name')),body=encodeURIComponent(`Name: ${d.get('name')}\nEmail: ${d.get('email')}\nAnimal: ${d.get('animal')}\nDates: ${d.get('dates')}\n\nPet details:\n${d.get('message')||'None provided'}`);document.getElementById('status').textContent='Your email app should open. Replace YOUR-EMAIL@example.com in script.js with your real email.';location.href=`mailto:${recipient}?subject=${subject}&body=${body}`};document.getElementById('year').textContent=new Date().getFullYear();
+const menu = document.getElementById('menu');
+const nav = document.getElementById('nav');
+
+menu.onclick = () => nav.classList.toggle('open');
+
+nav.querySelectorAll('a').forEach((link) => {
+  link.onclick = () => nav.classList.remove('open');
+});
+
+const modal = document.getElementById('modal');
+
+document.querySelectorAll('.card').forEach((card) => {
+  card.onclick = () => {
+    document.getElementById('mt').textContent = card.dataset.name;
+    document.getElementById('mc').textContent = card.dataset.copy;
+    modal.showModal();
+  };
+});
+
+document.getElementById('close').onclick = () => modal.close();
+document.getElementById('ask').onclick = () => modal.close();
+
+document.getElementById('form').onsubmit = async (event) => {
+  event.preventDefault();
+
+  const form = event.target;
+  const status = document.getElementById('status');
+  const button = form.querySelector('button[type="submit"]');
+
+  status.textContent = 'Sending...';
+  button.disabled = true;
+
+  try {
+    const response = await fetch('https://formspree.io/f/mojggdqe', {
+      method: 'POST',
+      body: new FormData(form),
+      headers: {
+        Accept: 'application/json'
+      }
+    });
+
+    if (response.ok) {
+      status.textContent = 'Thank you! Your booking request was sent.';
+      form.reset();
+    } else {
+      const data = await response.json();
+
+      status.textContent = data.errors
+        ? data.errors.map((error) => error.message).join(', ')
+        : 'Something went wrong. Please try again.';
+    }
+  } catch (error) {
+    status.textContent = 'Unable to send right now. Please try again.';
+  } finally {
+    button.disabled = false;
+  }
+};
+
+document.getElementById('year').textContent = new Date().getFullYear();
