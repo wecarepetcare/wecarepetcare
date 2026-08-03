@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>We Care Pet Care</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css"></head>
+<body>
+<header><a class="brand" href="#home"><span>🐾</span><b>We Care<small>Pet Care</small></b></a>
+<button id="menu" aria-label="Open menu">☰</button>
+<nav id="nav"><a href="#home">Home</a><a href="#services">Services</a><a href="#about">About Me</a><a href="#contact">Contact</a><a class="pill" href="#contact">Book Now 🐾</a></nav></header>
+<main>
+<section id="home" class="hero"><div class="shade"></div><div class="hero-copy"><p class="eyebrow">Oh, hi! 🐾</p><h1>Hi, I'm Madelyn!</h1>
+<p>I love animals so much—and animals love and listen to me! I'll take great care of your pets like they're my very own.</p>
+<div class="actions"><a class="button primary" href="#contact">Book Me Now</a><a class="button light" href="#services">See My Services</a></div></div></section>
+<section id="services" class="section warm"><div class="heading"><h2>Animals I Care For 🐾</h2><p>I take care of all kinds of animals—big, small, fluffy and feathered!</p></div>
+<div class="grid">
+<button class="card" data-name="Dogs" data-copy="Walks, feeding, water, playtime and cuddles."><img src="assets/dog.png" alt="Dogs"><span>🐶</span><b>Dogs</b><small>Walks, playtime & cuddles!</small></button>
+<button class="card" data-name="Cats" data-copy="Feeding, fresh water, litter care and companionship."><img src="assets/cat.png" alt="Cats"><span>🐱</span><b>Cats</b><small>Cozy care & gentle love</small></button>
+<button class="card" data-name="Chickens" data-copy="Feed, water, egg collection and coop checks."><img src="assets/chicken.png" alt="Chickens"><span>🐔</span><b>Chickens</b><small>Fed, happy & clucking!</small></button>
+<button class="card" data-name="Goats" data-copy="Food, water and friendly attention."><img src="assets/goat.png" alt="Goats"><span>🐐</span><b>Goats</b><small>Friendly farm fun!</small></button>
+<button class="card" data-name="Farm Animals" data-copy="Dependable feeding, watering and check-ins."><img src="assets/farm.png" alt="Farm Animals"><span>🐴</span><b>Farm Animals</b><small>Barnyard friends welcome</small></button>
+<button class="card" data-name="Fish" data-copy="Feeding and aquarium checks."><img src="assets/fish.png" alt="Fish"><span>🐟</span><b>Fish</b><small>Fed & tank checked</small></button>
+<button class="card" data-name="Rabbits" data-copy="Food, hay, fresh water and gentle care."><img src="assets/rabbit.png" alt="Rabbits"><span>🐰</span><b>Rabbits</b><small>Safe, sweet & well fed</small></button>
+<button class="card" data-name="Birds" data-copy="Food, water and care for feathered friends."><img src="assets/bird.png" alt="Birds"><span>🦜</span><b>Birds</b><small>Chirpy & cared for!</small></button>
+</div><a class="button primary centered" href="#contact">See Plans & Services</a></section>
+<section id="about" class="section"><div class="about"><img src="assets/about.png" alt="Madelyn caring for an animal"><div>
+<p class="eyebrow">Meet your pet sitter</p><h2>Hi, I'm Madelyn! 👋</h2>
+<p>I'm 8 years old and I have loved animals my whole entire life. I take every pet seriously, with help and supervision from my family.</p>
+<p>I care for dogs, cats, chickens, goats, farm animals, fish, rabbits, birds and more.</p>
+<details><summary>🐾 Fun fact about me</summary><p>Animals seem to listen to me!</p></details>
+<a class="button primary" href="#contact">Learn More About Me</a></div></div></section>
+<section id="contact" class="section warm"><div class="heading"><h2>Book Pet Care 🐾</h2><p>Fill this out and your email app will open with the request.</p></div>
+<form id="form"><label>Your name<input name="name" required></label><label>Your email<input name="email" type="email" required></label>
+<label>Animal<select name="animal" required><option value="">Choose one</option><option>Dog</option><option>Cat</option><option>Chicken</option><option>Goat</option><option>Farm animal</option><option>Fish</option><option>Rabbit</option><option>Bird</option><option>Other</option></select></label>
+<label>Dates needed<input name="dates" placeholder="August 8–10" required></label>
+<label class="full">Pet details<textarea name="message" rows="5"></textarea></label><button class="button primary full" type="submit">Send Booking Request</button>
+<p id="status" class="full"></p></form></section></main>
+<footer><div class="brand foot"><span>🐾</span><b>We Care<small>Pet Care</small></b></div><p>Food, water and love while you're away.</p><p>© <span id="year"></span> We Care Pet Care</p></footer>
+<dialog id="modal"><button id="close">×</button><div class="paw">🐾</div><h2 id="mt"></h2><p id="mc"></p><a class="button primary" href="#contact" id="ask">Ask About Care</a></dialog>
+<script src="script.js"></script></body></html>
